@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st 
+import io
 
 st.title("PROYEK ANALISIS DATA")
 st.header("DATA WRANGLING")
@@ -59,5 +60,63 @@ st.caption(
 )
 
 st.subheader("Gathering Data")
+st.caption("customers_df")
 customers_df = pd.read_csv("https://raw.githubusercontent.com/dicodingacademy/dicoding_dataset/main/DicodingCollection/customers.csv")
 st.dataframe(data=customers_df)
+
+buffer = io.StringIO()
+customers_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
+
+orders_df = pd.read_csv("https://raw.githubusercontent.com/dicodingacademy/dicoding_dataset/main/DicodingCollection/orders.csv")
+st.dataframe(data=orders_df)
+
+buffer = io.StringIO()
+orders_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
+
+products_df = pd.read_csv("https://raw.githubusercontent.com/dicodingacademy/dicoding_dataset/main/DicodingCollection/products.csv")
+st.dataframe(data=products_df)
+
+buffer = io.StringIO()
+products_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
+
+sales_df = pd.read_csv("https://raw.githubusercontent.com/dicodingacademy/dicoding_dataset/main/DicodingCollection/sales.csv")
+st.dataframe(data=sales_df)
+
+buffer = io.StringIO()
+sales_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
+
+# st.subheader("Assesing Data")
+# st.caption("customers_df")
+# customers_df
+# buffer = io.StringIO()
+# customers_df.info(buf=buffer)
+# s = buffer.getvalue(buf=buffer)
+# st.text(s)
+
+# # st.write(customers_df.isna().sum())
+
+# st.caption("products_df")
+# buffer = io.StringIO()
+# products_df.info(buf=buffer)
+# s = buffer.getvalue()
+# st.text(s)
+
+# st.caption("orders_df")
+# buffer = io.StringIO()
+# orders_df.info(buf=buffer)
+# s = buffer.getvalue()
+# st.text(s)
+
+# st.caption("sales_df")
+# buffer = io.StringIO()
+# sales_df.info(buf=buffer)
+# s = buffer.getvalue()
+# st.text(s)
