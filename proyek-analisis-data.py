@@ -49,6 +49,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 """
 st.code(code, language='python')
+st.caption(
+    """Ada tiga tahapan Data Wrangling
+
+1. Gathering Data
+2. Assesing Data
+3. Cleaning Data
+    """
+)
 
 st.subheader("Gathering Data")
 customers_df = pd.read_csv("https://raw.githubusercontent.com/dicodingacademy/dicoding_dataset/main/DicodingCollection/customers.csv")
